@@ -39,6 +39,7 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Deploy Secret
+        uses: actions/upload-pages-artifact@v4
         with: # Set the secret as an input
           currency_token: ${{ secrets.CURRENCY_TOKEN }}
 
