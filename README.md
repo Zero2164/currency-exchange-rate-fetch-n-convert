@@ -19,7 +19,7 @@ options:
 
 
 
-Check out the interactive Fetch and Convert App below:
+Check out the interactive Fetch and Convert Static Web App below:
 
 [Fetch n' Convert - Static App](https://github.com/Zero2164/currency-exchange-rate-fetch-n-convert/tree/static-app)
 
