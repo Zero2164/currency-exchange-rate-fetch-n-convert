@@ -37,8 +37,6 @@
                         <div class="field">
                             <label class="label" for="baseValue">Base Value:</label>
                             <div class="control has-icons-left has-icons-right">
-                                <!--  -->
-
                                 <input class="input is-medium"
                                     onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="1.00"
                                     type="number" pattern="[0-9]+([.,][0-9]+)?" id="baseValue" step="1.00" min="0">
@@ -51,10 +49,7 @@
                         </div>
 
                         <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-link" id="convertBtn">Submit</button>
-                            </div>
-
+                            <button class="button is-primary is-medium is-fullwidth is-responsive" id="convertBtn">Fetch</button>
                         </div>
                     </div>
                 </div>
