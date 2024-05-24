@@ -31,18 +31,20 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         "INR": "₹",
         "KRW": "₩",
     }
-    const response = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${CURR_TOKEN}&base_currency=${baseCurrency}&currencies=${CURRENCIES}`);
-    const data = await response.json();
-    feedbackDiv.innerHTML = `<p><strong>${baseCurrency}</strong> priced at <strong>${CURRENCY_ICONS[baseCurrency]} ${baseValue || 1.00}</strong> converts to the following</p>`;
 
+    const response = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${CURR_TOKEN}&base_currency=${baseCurrency}&currencies=${CURRENCIES}`);
+    const data = await response.json();;
+  
     const resultsDiv = document.getElementById('results');
     
     resultsDiv.innerHTML = '';
 
-    if (data.error) {
-        resultsDiv.innerHTML = `<p>${data.error}</p>`;
+    if (!data) {
+        feedbackDiv.innerHTML = `<p>Oops! There was a problem..</p>`;
+        resultsDiv.innerHTML = `<p class="has-text-danger">Issue retrieving data. <br> ${data}</p>`;
         return;
     }
+    feedbackDiv.innerHTML = `<p><strong>${baseCurrency}</strong> priced at <strong>${CURRENCY_ICONS[baseCurrency]} ${baseValue || 1.00}</strong> converts to the following</p>`;
 
     const table = document.createElement('table');
     table.classList.add('table', 'is-striped', 'is-hoverable', 'has-background-black-ter')
