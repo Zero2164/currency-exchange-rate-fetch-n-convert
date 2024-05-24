@@ -2,7 +2,7 @@
 
 ### Fetch and Convert Currency Rates
 
-#### Features
+#### Description
 - Mass-Fetches the latest currency exchange rates for a given base currency
 as well as optionally converts and displays a base currency value next to each result.
 
