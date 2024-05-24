@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+}
+
+strong.has-text-primary {
+    padding-right: 0.5rem;
+}
+
+/* .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 10px;
+    overflow: hidden;
+} */
+
+.bg-theme {
+    background-color: #282F44;
+}
+
+.box-theme {
+    background-color: #50C5B7 !important;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+}
+

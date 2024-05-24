@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="bg-theme">
+
+<head>
+    <title>Fetch n' Convert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="section">
+        <h2 class="title is-2 has-text-primary">
+            <span title="Currency Symbol" class="icon is-medium is-left">
+                <i class="fas fa-money-bill-transfer"></i>
+            </span>
+            Fetch n' Convert
+        </h2>
+        <div class="container is-fluid">
+            <div class="columns">
+                <div class="column is-one-quarter">
+                    <div class="box has-background-black-ter">
+                        <div class="field">
+                            <label class="label" for="baseCurrency">Base Currency:</label>
+                            <div class="control">
+                                <div class="select is-info">
+                                    <select id="baseCurrency"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="baseValue">Base Value:</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <!--  -->
+
+                                <input class="input is-medium"
+                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="1.00"
+                                    type="number" pattern="[0-9]+([.,][0-9]+)?" id="baseValue" step="1.00" min="0">
+
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-coins"></i>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-link" id="convertBtn">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-three-quarters">
+                    <div id="results" class="table-container box has-background-black-ter theme-dark">
+                        <table class="table is-striped is-hoverable has-background-black-ter">
+                            <thead>
+                                <tr>
+                                    <th>Currency</th>
+                                    <th>Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong class="has-text-primary">$ </strong> (USD)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">€ </strong> (EUR)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">A$</strong> (AUD)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">C$</strong> (CAD)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">£ </strong> (GBP)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">¥ </strong> (JPY)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">¥ </strong> (CNY)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">₹ </strong> (INR)</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="has-text-primary">₩ </strong> (KRW)</td>
+                                    <td>0.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <footer class=" bg-theme">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Fetch n' Convert App</strong> by <a href="https://github.com/Zero2164" target="_blank">@Zero2164</a>.
+            <br>
+            Powered by <a href="https://bulma.io/" target="_blank">Bulma.io</a> & <a href="https://github.com/" target="_blank">GitHub Pages</a>.
+
+          </p>
+        </div>
+      </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
