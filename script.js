@@ -3,6 +3,9 @@ const CURRENCIES = ["AUD", "EUR", "USD", "CAD", "GBP", "JPY", "CNY", "INR", "KRW
 
 window.addEventListener('load', () => {
     const currencySelect = document.getElementById('baseCurrency');
+    // clear baseValue field on page load
+    document.getElementById('baseValue').value = '';
+
 
     CURRENCIES.forEach(currency => {
         const option = document.createElement('option');
@@ -14,21 +17,23 @@ window.addEventListener('load', () => {
 document.getElementById('convertBtn').addEventListener('click', async () => {
     const baseCurrency = document.getElementById('baseCurrency').value;
     const baseValue = document.getElementById('baseValue').value;
+    const feedbackDiv = document.getElementById('feedback');
     const DECODED_TOKEN = atob('ZmNhX2xpdmVfbXlZMnhCRnQ2Mlk1TktETGVQeXNoaVJ0eHRaNm4wNm03YXdxWmM4bA==');
     const CURR_TOKEN = `${ DECODED_TOKEN }`;
     const CURRENCY_ICONS = {
-        "USD": "<strong class='has-text-primary'>$</strong>",
-        "EUR": "<strong class='has-text-primary'>€</strong>",
-        "AUD": "<strong class='has-text-primary'>A$</strong>",
-        "CAD": "<strong class='has-text-primary'>C$</strong>",
-        "GBP": "<strong class='has-text-primary'>£</strong>",
-        "JPY": "<strong class='has-text-primary'>¥</strong>",
-        "CNY": "<strong class='has-text-primary'>¥</strong>",
-        "INR": "<strong class='has-text-primary'>₹</strong>",
-        "KRW": "<strong class='has-text-primary'>₩</strong>",
+        "USD": "$",
+        "EUR": "€",
+        "AUD": "A$",
+        "CAD": "C$",
+        "GBP": "£",
+        "JPY": "¥",
+        "CNY": "¥",
+        "INR": "₹",
+        "KRW": "₩",
     }
     const response = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=${CURR_TOKEN}&base_currency=${baseCurrency}&currencies=${CURRENCIES}`);
     const data = await response.json();
+    feedbackDiv.innerHTML = `<p><strong>${baseCurrency}</strong> priced at <strong>${CURRENCY_ICONS[baseCurrency]} ${baseValue || 1.00}</strong> converts to the following</p>`;
 
     const resultsDiv = document.getElementById('results');
     
@@ -55,10 +60,10 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         const row = document.createElement('tr');
         if (baseValue) {
             const convertedValue = baseValue * rate;
-            row.innerHTML = `<td>${currency}</td><td>${CURRENCY_ICONS[currency]}${convertedValue.toFixed(2)}</td>`;
+            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary'>${CURRENCY_ICONS[currency]}</strong>${convertedValue.toFixed(2)}</td>`;
         }
         else {
-            row.innerHTML = `<td>${currency}</td><td>${CURRENCY_ICONS[currency]}${rate.toFixed(2)}</td>`;
+            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary'>${CURRENCY_ICONS[currency]}</strong>${rate.toFixed(2)}</td>`;
         }
         tbody.appendChild(row);
     }
