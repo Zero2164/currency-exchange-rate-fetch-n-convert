@@ -1,4 +1,4 @@
-# Fetch n' Convert - the static web application
+# Fetch n' Convert - Main
 
 ### Fetch and Convert Currency Rates
 
