@@ -10,6 +10,6 @@ as well as optionally converts and displays a base currency value next to each r
 
 Check out the Fetch and Convert Apps below:
 
-[Fetch n' Convert - Static App](https://github.com/Zero2164/currency-exchange-rate-fetch-n-convert/tree/static-app) for an interactive demo!
+[Fetch n' Convert - Static Web App](https://zero2164.github.io/currency-exchange-rate-fetch-n-convert/) for an interactive demo!
 
 [Fetch n' Convert - Python App](https://github.com/Zero2164/currency-exchange-rate-fetch-n-convert/tree/python-app) for a ...less interactive demo!
