@@ -62,10 +62,10 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         const row = document.createElement('tr');
         if (baseValue) {
             const convertedValue = baseValue * rate;
-            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary'>${CURRENCY_ICONS[currency]}</strong>${convertedValue.toFixed(2)}</td>`;
+            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${convertedValue.toFixed(2)}</td>`;
         }
         else {
-            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary'>${CURRENCY_ICONS[currency]}</strong>${rate.toFixed(2)}</td>`;
+            row.innerHTML = `<td>${currency}</td><td><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${rate.toFixed(2)}</td>`;
         }
         tbody.appendChild(row);
     }

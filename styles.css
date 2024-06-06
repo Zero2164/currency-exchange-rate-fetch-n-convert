@@ -16,9 +16,11 @@ th, td {
     text-align: left;
 }
 
-strong.has-text-primary {
+strong.value-sign {
     padding-right: 0.5rem;
 }
+
+
 
 
 /* .container {
