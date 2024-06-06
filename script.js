@@ -44,7 +44,7 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         resultsDiv.innerHTML = `<p class="has-text-danger">Issue retrieving data. <br> ${data}</p>`;
         return;
     }
-    feedbackDiv.innerHTML = `<p><strong class="has-text-white">${baseCurrency}</strong> priced at <strong class="has-text-primary">${CURRENCY_ICONS[baseCurrency]} ${baseValue.toFixed(2) || 1.00}</strong> converts to the following</p>`;
+    feedbackDiv.innerHTML = `<p><strong class="has-text-primary">${CURRENCY_ICONS[baseCurrency]} ${baseCurrency}</strong> priced at <strong class="has-text-primary">${baseValue.toFixed(2) || 1.00}</strong> converts to the following</p>`;
 
     const table = document.createElement('table');
     table.classList.add('table', 'is-striped', 'is-hoverable', 'has-background-black-ter')
@@ -62,10 +62,10 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         const row = document.createElement('tr');
         if (baseValue) {
             const convertedValue = baseValue * rate;
-            row.innerHTML = `<td>${currency}</td><td class="has-text-primary"><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${convertedValue.toFixed(2)}</td>`;
+            row.innerHTML = `<td class='has-text-primary><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${currency}</td><td class="has-text-primary">${convertedValue.toFixed(2)}</td>`;
         }
         else {
-            row.innerHTML = `<td>${currency}</td><td class="has-text-primary"><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${rate.toFixed(2)}</td>`;
+            row.innerHTML = `<td class='has-text-primary><strong class='has-text-primary value-sign'>${CURRENCY_ICONS[currency]}</strong>${currency}</td><td class="has-text-primary">${rate.toFixed(2)}</td>`;
         }
         tbody.appendChild(row);
     }
