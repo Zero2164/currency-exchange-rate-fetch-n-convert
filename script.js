@@ -52,7 +52,7 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
     const tbody = document.createElement('tbody');
 
     const headerRow = document.createElement('tr');
-    headerRow.innerHTML = `<th class="has-text-primary">Currency</th><th class="has-text-primary">Rate</th>`;
+    headerRow.innerHTML = `<th class="has-text-white">Currency</th><th class="has-text-white">Rate</th>`;
     thead.appendChild(headerRow);
 
     for (const [currency, rate] of Object.entries(data.data)) {
@@ -62,10 +62,10 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         const row = document.createElement('tr');
         if (baseValue) {
             const convertedValue = baseValue * rate;
-            row.innerHTML = `<td class='has-text-white><strong class='has-text-white value-sign'>${CURRENCY_ICONS[currency]}</strong> ${currency}</td><td class="has-text-white">${convertedValue.toFixed(2)}</td>`;
+            row.innerHTML = `<td class='has-text-white><strong class='has-text-white value-sign'>${CURRENCY_ICONS[currency]}</strong> ${currency}</td><td class="has-text-primary">${convertedValue.toFixed(2)}</td>`;
         }
         else {
-            row.innerHTML = `<td class='has-text-white><strong class='has-text-white value-sign'>${CURRENCY_ICONS[currency]}</strong> ${currency}</td><td class="has-text-white">${rate.toFixed(2)}</td>`;
+            row.innerHTML = `<td class='has-text-white><strong class='has-text-white value-sign'>${CURRENCY_ICONS[currency]}</strong> ${currency}</td><td class="has-text-primary">${rate.toFixed(2)}</td>`;
         }
         tbody.appendChild(row);
     }
