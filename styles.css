@@ -38,9 +38,15 @@ strong.value-sign {
     background-color: #50C5B7 !important;
 }
 
-input[type=number], input[type=number]:hover, input[type=number]:active, input[type=number]:focus {
+input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
