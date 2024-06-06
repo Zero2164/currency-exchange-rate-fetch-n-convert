@@ -4,7 +4,7 @@ const CURRENCIES = ["AUD", "EUR", "USD", "CAD", "GBP", "JPY", "CNY", "INR", "KRW
 window.addEventListener('load', () => {
     const currencySelect = document.getElementById('baseCurrency');
     // clear baseValue field on page load
-    document.getElementById('baseValue').value = '';
+    document.getElementById('baseValue').value = '1.00';
 
 
     CURRENCIES.forEach(currency => {
