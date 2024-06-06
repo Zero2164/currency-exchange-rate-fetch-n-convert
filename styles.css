@@ -1,7 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+
+
+body::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -19,16 +28,6 @@ th, td {
 strong.value-sign {
     padding-right: 0.5rem;
 }
-
-
-
-
-/* .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem 10px;
-    overflow: hidden;
-} */
 
 .bg-theme {
     background-color: #282F44;
@@ -49,4 +48,5 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 
