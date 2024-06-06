@@ -1,16 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    margin: 20px;
 }
-
-
-body::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -49,4 +40,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+section {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+section::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
 
