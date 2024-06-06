@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 });
 document.getElementById('convertBtn').addEventListener('click', async () => {
     const baseCurrency = document.getElementById('baseCurrency').value;
-    const baseValue = document.getElementById('baseValue').value;
+    const baseValue = Number(document.getElementById('baseValue').value);
     const feedbackDiv = document.getElementById('feedback');
     const DECODED_TOKEN = atob('ZmNhX2xpdmVfbXlZMnhCRnQ2Mlk1TktETGVQeXNoaVJ0eHRaNm4wNm03YXdxWmM4bA==');
     const CURR_TOKEN = `${ DECODED_TOKEN }`;
@@ -44,7 +44,7 @@ document.getElementById('convertBtn').addEventListener('click', async () => {
         resultsDiv.innerHTML = `<p class="has-text-danger">Issue retrieving data. <br> ${data}</p>`;
         return;
     }
-    feedbackDiv.innerHTML = `<p><strong class="has-text-white">${baseCurrency}</strong> priced at <strong class="has-text-primary">${CURRENCY_ICONS[baseCurrency]} ${baseValue.toFixed(2) || 1.00}</strong> converts to the following</p>`;
+    feedbackDiv.innerHTML = `<p><strong class="has-text-white">${baseCurrency}</strong> priced at <strong class="has-text-primary">${CURRENCY_ICONS[baseCurrency]} ${baseValue || 1.00}</strong> converts to the following</p>`;
 
     const table = document.createElement('table');
     table.classList.add('table', 'is-striped', 'is-hoverable', 'has-background-black-ter')
